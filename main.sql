@@ -61,6 +61,16 @@ INSERT INTO table1 (nombre, ciudad) VALUES ('Pablo', 'Medellín'), ('Carolina', 
 -- SELECT DATA
 SELECT * FROM table1; -- Select all from the table
 SELECT nombre FROM table1;  -- Select a specific column
+SELECT * FROM table1 LIMIT 2; -- Just bring the 2 first rows
+SELECT * FROM table1 WHERE id NOT IN (4, 6); -- Bring everything but 4 and 6 rows
+SELECT * FROM table1 WHERE id IN (4, 6); -- Bring just 4 and 6 rows
+SELECT * FROM table1 WHERE id BETWEEN 4 AND 6;  -- Bring rows between 4 and 6 including 4 and 6 (Works only with numbers)
+SELECT * FROM table1 WHERE nombre NOT IN ('Anderson', 'Martina'); -- Bring evertything but rows that contain 'Anderson' and 'Martina' in the column 'nombre'
+
+-- Subquery
+SELECT * FROM table1 WHERE id IN (
+  SELECT * FROM table1 WHERE id > 2;
+);  -- First looks for id > 2. Then it looks for id conteined in the before result.
 
 
 -- ORGANIZING DATA
@@ -83,6 +93,17 @@ SELECT DISTINCT nombre from table1; -- Bring just one time every data from nombr
 SELECT (nombre || ' ' || ciudad) as 'Nombre y apellido' FROM table1;  -- Concat nombre and ciudad: 'nombre ciudad', and it's shown like a new column, but it doesn't affect the original data
 SELECT CONCAT(nombre, ' ', ciudad) as 'Nombre y apellido' FROM table1;  -- Concat nombre and ciudad: 'nombre ciudad', and it's shown like a new column, but it doesn't affect the original data
 
+
+-- GROUP BY CLAUSE
+SELECT COUNT(*) FROM table1;  -- Count the total of registers in table1
+SELECT COUNT(*) AS Count FROM table1 -- Count the total of registers in table1 and is show as a column 'Count'
+SELECT nombre, COUNT(nombre) FROM table1 GROUP BY nombre;
+SELECT ciudad, nombre, COUNT(nombre) FROM table1 GROUP BY nombre, ciudad;
+SELECT name, SUM(salary) FROM company GROUP BY name;
+
+
+-- UPDATE DATA
+UPDATE table1 SET nombre = 'Laura' WHERE id = 3;  -- Update nombre with Laura on the id = 3 from table1
 
 
 
