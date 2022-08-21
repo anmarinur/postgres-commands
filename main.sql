@@ -4,7 +4,7 @@
 /l -- List all database
 /c -- Connect with a specific database
 /dt -- Describe tables
-/! clc -- Clean screen
+/! cls -- Clean screen
 
 
 -- DATATYPES
@@ -69,7 +69,7 @@ SELECT * FROM table1 WHERE nombre NOT IN ('Anderson', 'Martina'); -- Bring evert
 
 -- Subquery
 SELECT * FROM table1 WHERE id IN (
-  SELECT * FROM table1 WHERE id > 2;
+  SELECT id FROM table1 WHERE id > 2;
 );  -- First looks for id > 2. Then it looks for id conteined in the before result.
 
 
