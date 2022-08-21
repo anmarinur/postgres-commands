@@ -106,6 +106,16 @@ SELECT name, SUM(salary) FROM company GROUP BY name;
 UPDATE table1 SET nombre = 'Laura' WHERE id = 3;  -- Update nombre with Laura on the id = 3 from table1
 
 
+-- DELETE DATA
+DELETE FROM table1 WHERE id = 3;  -- Delete data with id = 3
+DELETE FROM table1; -- Delete all the information in the table1 but not the table
+
+
+-- JOINS
+SELECT * FROM personas JOIN ciudades ON ciudades.id = personas.ciudad -- Join data from both tables where the condition is true. Join tables.
+SELECT personas.nombre, apellido, ciudades.nombre FROM personas JOIN ciudades ON ciuades.id = personas.ciudad
+SELECT * FROM ciudades LEFT JOIN personas ON ciudades.id = personas.ciudad; -- Bring all the data from the left, even if this data it's not contained on the right table.
+SELECT * FROM ciudades RIGHT JOIN personas ON ciudades.id = personas.ciudad; -- Bring all the data from the right, even if this data it's not contained on the left table.
 
 
 
