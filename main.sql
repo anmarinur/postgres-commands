@@ -90,8 +90,8 @@ SELECT nombre FROM table1 WHERE nombre LIKE '%son';  -- Looking for nombre wich 
 SELECT nombre FROM table1 WHERE nombre LIKE '%a%';  -- Looking for nombre wich contains a letter a (Case-sensitive)
 SELECT nombre FROM table1 WHERE nombre ILIKE '%SoN';  -- Looking for nombre wich ends with son (Non Case-sensitive)
 SELECT DISTINCT nombre from table1; -- Bring just one time every data from nombre
-SELECT (nombre || ' ' || ciudad) as 'Nombre y apellido' FROM table1;  -- Concat nombre and ciudad: 'nombre ciudad', and it's shown like a new column, but it doesn't affect the original data
-SELECT CONCAT(nombre, ' ', ciudad) as 'Nombre y apellido' FROM table1;  -- Concat nombre and ciudad: 'nombre ciudad', and it's shown like a new column, but it doesn't affect the original data
+SELECT (nombre || ' ' || ciudad) as Nombre y apellido FROM table1;  -- Concat nombre and ciudad: 'nombre ciudad', and it's shown like a new column, but it doesn't affect the original data
+SELECT CONCAT(nombre, ' ', ciudad) as Nombre y apellido FROM table1;  -- Concat nombre and ciudad: 'nombre ciudad', and it's shown like a new column, but it doesn't affect the original data
 
 
 -- GROUP BY CLAUSE
