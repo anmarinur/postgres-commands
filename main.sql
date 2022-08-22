@@ -117,3 +117,4 @@ SELECT * FROM personas JOIN ciudades ON ciudades.id = personas.ciudad -- Join da
 SELECT personas.nombre, apellido, ciudades.nombre FROM personas JOIN ciudades ON ciuades.id = personas.ciudad
 SELECT * FROM ciudades LEFT JOIN personas ON ciudades.id = personas.ciudad; -- Bring all the data from the left, even if this data it's not contained on the right table.
 SELECT * FROM ciudades RIGHT JOIN personas ON ciudades.id = personas.ciudad; -- Bring all the data from the right, even if this data it's not contained on the left table.
+SELECT p.nombre, p.apellido, c.nombre FROM personas p JOIN ciudades c ON c.id = p.ciudad; -- c = ciudades and p = personas
