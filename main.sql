@@ -100,6 +100,7 @@ SELECT COUNT(*) AS Count FROM table1 -- Count the total of registers in table1 a
 SELECT nombre, COUNT(nombre) FROM table1 GROUP BY nombre;
 SELECT ciudad, nombre, COUNT(nombre) FROM table1 GROUP BY nombre, ciudad;
 SELECT name, SUM(salary) FROM company GROUP BY name;
+SELECT nombre, apellido FROM personas GROUP BY nombre, apellido HAVING COUNT(nombre) > 1; -- Just count when the condition is true
 
 
 -- UPDATE DATA
